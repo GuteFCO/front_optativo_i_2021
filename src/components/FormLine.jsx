@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-function FormLine(props) {
+function FormLine({ label, children }) {
     return (
         <div>
-            <label>{props.label}</label>
-            {props.children}
+            <label>{label}</label>
+            {children}
         </div>
     );
 }

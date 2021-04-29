@@ -4,7 +4,11 @@ import Card from '../components/Card';
 import FormInput from '../components/FormInput';
 
 
-const loginLinks = ['Registrarse', 'Acerca de', 'Contacto'];
+const loginLinks = [
+    {href: '/register', label: 'Registrarse'},
+    {href: '/about', label: 'Acerca de'},
+    {href: '/contact', label: 'Contacto'}
+];
 
 
 function Login() {

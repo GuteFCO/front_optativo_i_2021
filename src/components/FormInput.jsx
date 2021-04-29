@@ -1,12 +1,12 @@
 import React from 'react';
 import FormLine from './FormLine';
 
-function FormInput(props) {
+function FormInput({ label, type, placeholder }) {
     return (
-        <FormLine label={props.label}>
+        <FormLine label={label}>
             <input
-                type={props.type}
-                placeholder={props.placeholder}
+                type={type}
+                placeholder={placeholder}
                 className="fullWidth bigger" />
         </FormLine>
     );

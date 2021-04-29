@@ -3,16 +3,27 @@ import Navbar from '../components/Navbar';
 import Card from '../components/Card';
 import FormInput from '../components/FormInput';
 import FormSelect from '../components/FormSelect';
+import FormTextarea from '../components/FormTextarea';
+import FormDatalist from '../components/FormDatalist';
+import FormOutput from '../components/FormOutput';
 
 
-const registerLinks = ['Ingresar', 'Acerca de', 'Contacto'];
+const registerLinks = [
+    {href: '/', label: 'Ingresar'},
+    {href: '/about', label: 'Acerca de'},
+    {href: '/contact', label: 'Contacto'}
+];
 const browserOptions = [
-    {value: "", label: "Seleccione sus navegadores favoritos"},
     {value: "firefox", label: "Mozilla Firefox"},
     {value: "chrome", label: "Google Chrome"},
     {value: "edge", label: "Microsoft Edge"},
     {value: "safari", label: "Safari"},
     {value: "opera", label: "Opera"},
+];
+const cursoOptions = [
+    "Optativo 1",
+    "Bases de datos",
+    "Cálculo"
 ];
 
 
@@ -39,29 +50,24 @@ function Register() {
                         />
 
                         <FormSelect
+                            placeholder="Seleccione sus navegadores favoritos"
                             label="Navegadores preferidos"
                             options={browserOptions}
                         />
 
-                        <div>
-                            <label>Informaci&oacute;n adicional</label>
-                            <textarea className="fullWidth bigger" rows="5" required></textarea>
-                        </div>
+                        <FormTextarea
+                            label="Informaci&oacute;n adicional"
+                        />
 
-                        <div>
-                            <label>Curso actual</label>
-                            <input type="text" list="cursos" className="fullWidth bigger" required />
-                            <datalist id="cursos">
-                                <option>Optativo 1</option>
-                                <option>Bases de datos</option>
-                                <option>Cálculo</option>
-                            </datalist>
-                        </div>
+                        <FormDatalist
+                            idList="cursos"
+                            label="Curso actual"
+                            options={cursoOptions}
+                        />
 
-                        <div>
-                            <label>Fecha actual</label>
-                            <output className="fullWidth bigger">14/04/2021</output>
-                        </div>
+                        <FormOutput
+                            value={new Date().toLocaleDateString()}
+                        />
 
                         <div className="centered">
                             <input type="submit" value="Registrarse" />

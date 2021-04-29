@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
-function Navbar(props) {
+function Navbar({ links }) {
     return (
         <header>
             <nav>
                 <ul>
                     {
-                        props.links.map(
-                            (link, i) => <li key={i}>{link}</li>
+                        links.map(
+                            (link, i) => <li key={i}>
+                                <Link to={link.href}>{link.label}</Link>
+                            </li>
                         )
                     }
                 </ul>
@@ -18,6 +21,10 @@ function Navbar(props) {
 }
 
 /*
+
+for (let i = 0; i < links.length; i++) {
+    let link = links[i];
+}
 
 A)
 function mapLink(link){

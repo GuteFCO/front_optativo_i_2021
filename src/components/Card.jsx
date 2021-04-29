@@ -1,15 +1,25 @@
 import React from 'react';
 
+const Card = ({ title, children }) => (
+    <section id="card">
+        <header>
+            <h3>{title}</h3>
+        </header>
+        {children}
+    </section>
+);
 
-function Card(props) {
+/*
+function Card({) {
     return (
         <section id="card">
             <header>
-                <h3>{props.title}</h3>
+                <h3>{title}</h3>
             </header>
-            {props.children}
+            {children}
         </section>
     );
 }
+*/
 
 export default Card;
