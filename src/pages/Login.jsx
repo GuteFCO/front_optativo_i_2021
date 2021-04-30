@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Card from '../components/Card';
-import FormInput from '../components/FormInput';
+import LoginForm from '../containers/LoginForm';
 
 
 const loginLinks = [
@@ -17,21 +17,7 @@ function Login() {
             <Navbar links={loginLinks} />
             <section>
                 <Card title="Ingreso">
-                    <form>
-                        <FormInput
-                            label="Correo"
-                            placeholder="Su direcci&oacute;n de correo"
-                            type="email"
-                        />
-                        <FormInput
-                            label="Contrase&ntilde;a"
-                            type="password"
-                        />
-
-                        <div className="centered">
-                            <input type="submit" value="Ingresar" />
-                        </div>
-                    </form>
+                    <LoginForm />
                 </Card>
             </section>
         </>
