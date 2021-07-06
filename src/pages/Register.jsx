@@ -1,6 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Card from '../components/Card';
+import FormLayout from '../layouts/FormLayout';
 import RegisterForm from '../containers/RegisterForm';
 
 
@@ -13,14 +12,11 @@ const registerLinks = [
 
 function Register() {
     return (
-        <>
-            <Navbar links={registerLinks} />
-            <section>
-                <Card title="Registrarse">
-                    <RegisterForm />
-                </Card>
-            </section>
-        </>
+        <FormLayout
+            links={registerLinks}
+            title="Registrarse"
+            Component={RegisterForm}
+        />
     );
 }
 

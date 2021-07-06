@@ -1,6 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Card from '../components/Card';
+import FormLayout from '../layouts/FormLayout';
 import LoginForm from '../containers/LoginForm';
 
 
@@ -11,16 +10,14 @@ const loginLinks = [
 ];
 
 
-function Login() {
+function Login({ history }) {
     return (
-        <>
-            <Navbar links={loginLinks} />
-            <section>
-                <Card title="Ingreso">
-                    <LoginForm />
-                </Card>
-            </section>
-        </>
+        <FormLayout
+            links={loginLinks}
+            title="Ingreso"
+            Component={LoginForm}
+            history={history}
+        />
     );
 }
 
